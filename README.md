@@ -2,6 +2,17 @@
 Simple library for catching interrupts from all pins on the Arduino
 
 ## Methods
-'void attachInterrupt(byte pin)' - 
-'void printAllPins(byte start, byte end)' - 
-'bool debounce(unsigned int debounceTime)' - 
+```c++
+void attachInterrupt(byte pin)
+```
+Attach interrupt to a pin
+
+```c++
+void printAllPins(byte start, byte end)
+```
+Prints the state of all pins in the specified range
+
+```c++
+bool debounce(unsigned int debounceTime)
+```
+Waits the specified amount of time, then returns "1" when the input has settled
