@@ -5,7 +5,7 @@ Simple library for catching interrupts from all pins on the Arduino
 ```c++
 void attachInterrupt(byte pin)
 ```
-Attach interrupt to a pin
+Attaches an interrupt to a pin
 
 ```c++
 void printAllPins(byte start, byte end)
