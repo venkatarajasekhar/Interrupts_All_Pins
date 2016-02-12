@@ -1,7 +1,7 @@
 #include <InterruptsAllPins.h>
 
 InterruptsAllPins interrupt;
-unsigned int debounceTime = 250; //The time we wait for the input to settle
+unsigned int debounceTime = 250; //The time we wait before we take new state change
 
 
 void setup() {
@@ -19,7 +19,7 @@ void loop() {
 
 
 ISR (PCINT2_vect) { //Interrupt vector catching interrupts from D0-D7
-  if (interrupt.debounce(debounceTime) == 1) {  //Returns "1" when the input has settled
+  if (interrupt.debounce(debounceTime) == 1) {  //Returns "1" only if the input hasn't changed for the specified amount of time
     interrupt.printAllPins(0, 7);  //Prints the state of all pins in the range specified
     
   }
